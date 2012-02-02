@@ -48,3 +48,61 @@
 
 
 
+.pobof div{
+line-height: 1.5;}
+.pobof h2{
+ color: #000099;
+font-family: "goudy-bookletter-1911-1","goudy-bookletter-1911-2","Baskerville","Georgia",serif;
+display:inline;line-height: 1.5;}
+
+.Animate p{
+white-space:nowrap;
+overflow:hidden;
+height:20px;
+width:1000px;
+position: relative;
+  -moz-animation-duration: 6s;
+  -moz-animation-name: slidein;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-name: slidein;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+
+  }
+.pobof h1{
+        text-shadow: 1px 1px 3px #1792B6;
+          font-size: 21px ;
+
+}
+
+@-moz-keyframes slidein {
+from {margin-left:-550px;}
+to {margin-left:10%;width:100%;}
+}
+@-webkit-keyframes slidein {
+from {margin-left:-550px;}
+to {margin-left:10%;width:100%;}
+}
+
+.pobof{
+
+    border: 3px solid rgba(255, 255, 255, 0.2);
+
+    background-clip: padding-box;
+    border-radius: 12px 12px 12px 12px;
+    background-size: 100% 100%;
+               box-shadow: 0 0 4px #4CCCCC;
+                 background-color: #9EEEFE;
+    background-image: -moz-linear-gradient(center top , #9EEEFE, #47C2F6);
+    background-image: -webkit-gradient(linear, left top , left bottom,  from(#9EEEFE), to(#47C2F6));
+
+       border-spacing: 0;
+    font: 12px "Verdana";
+    overflow: hidden;
+    padding: 20px 10px;
+    z-index: 2;
+
+  }
+
