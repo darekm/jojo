@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+<link href="jojo.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+var
+   l=200;
+   r=0.004;
+   rr=0.02;
+   masa=0.1;
+   v_p=0;
+   v_k=0;
+   Last=0;
+
+function jojo(id){
+  
+  var Now = new Date();
+  var d_t = (Now.getTime() - Last.getTime())*0.001;
+  Last  = Now;
+  if (l>0) {accel=-10;}
+  else {accel=10;}
+  epsilon=(r*accel)/(0.5*rr*rr);
+  v_k=v_p+epsilon*d_t;
+  
+  var l_k=(v_k+v_p)*0.5*d_t +l;
+  if ((l_k*l) <0){
+   l_k=l_k /2;
+   v_k=v_p*0.8;
+  }
+  if (v_k>1){v_k-=1;}
+  if (v_k<-1){v_k+=1;}
+  l=l_k;
+  v_p=v_k;
+  var h=Math.round(200-Math.abs(l));
+  var angle= Math.abs(l) /(rr*Math.PI);
+  console.log(l+'   '+v_p+'  '+epsilon);
+  angle=angle /180;
+  
+  var  d = document.getElementById(id);
+  d.style.top=h+"px";
+}
+
+function setup(x){
+var y=x+2;
+var z="setup("+y+")";
+setTimeout( z ,50);
+jojo("id0");
+}
+
+function start(){
+Last=new Date();
+var z="setup(0)";
+setTimeout(z,100);
+}
+
+window.onload = start(0);
+</script>
+</head>
+
+<body >
+<h1> <img src="html5.png" > Jojo</h1>
+<p> Animation of <a href="http://en.wikipedia.org/wiki/M%C3%B6bius_strip"> möbius strip</a> using 2d transform</p>
+
+
+<div id="mdcontent" style="display:block;">
+  <div id="globA">
+    <div class="glob">
+       <div class="lg0" id="id0"  ><img src="logom7.png"></div>
+    </div>
+  </div>
+</div>
+
+ <div class="video-js-box">
+    <!-- Using the Video for Everybody Embed Code http://camendesign.com/code/video_for_everybody -->
+    <video id="example_video_1" class="video-js" width="640" height="264" controls="controls" preload="auto" poster="mobius-clip.png">
+      <source src="mobius-clip.webm" type='video/webm; codecs="vp8, vorbis"' />
+      <source src="http://invoicer.pl/intro/mobius-clip.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+      <source src="http://invoicer.pl/intro/mobius-clip.ogv" type='video/ogg; codecs="theora, vorbis"' />      
+    </video>
+</div>
+
+
+<div style="display:block;float:left;position:fixed;bottom:0;right:0;"> 
+ <a href="http://invoicer.biz"><img src="intro-invoicer.png"></a>
+ <footer><cite>DarekM@emadar.com</cite> </footer>
+
+</div>
+
+</body>

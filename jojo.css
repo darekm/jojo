@@ -1,0 +1,50 @@
+.glob div{
+  position:absolute;
+  height:62px;
+  width:62px;
+  padding:0px 10px;
+  margin:3px ;
+}
+
+.glob p{
+  height:60px;
+  width:30px;
+  margin:0 15px;
+  padding:0;
+  vertical-align: top;
+  background:transparent url(intro-invoicer.png) no-repeat  0px 0px;
+}   
+   
+.glob{
+  position:relative;
+  -webkit-transition:  all     3.5s linear;
+  -moz-transition:     all     3.5s linear;
+
+}
+#glob:hover{
+ -webkit-transform:  rotate3d(0,0,1,120deg )translate3d(0,100px,0px) ;
+ -moz-transform:  scale3d(1.5,2.5,0.5) translate3d(0,100px,0px);
+}
+
+#globA{
+  
+  -moz-transition:  all 3.5s linear;  -webkit-transition:   all    3.5s linear;
+  -moz-transform-style: preserve-3d;  -webkit-transform-style:  preserve-3d;
+  -moz-perspective: 1000px;           -webkit-perspective: 1000px;
+  -moz-transform-origin:50% 50%;      -webkit-transform-origin:50% 50%;
+  position:relative;
+  width:500px;
+  height:500px;
+}
+
+
+
+
+
+.lg0 {-moz-transform: translate3d(0px,0px,0px);}
+
+
+#id0 p{background-position:   0px 0px;}
+
+
+
